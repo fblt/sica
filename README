@@ -1,0 +1,25 @@
+ ______   ______   ______    ______
+/      \ |      \ /      \  /       \
+|  $$$$$$\ \$$$$$$|  $$$$$$\|  $$$$$$\
+| $$___\$$  | $$  | $$   \$$| $$__| $$
+ \$$    \   | $$  | $$      | $$    $$
+ _\$$$$$$\  | $$  | $$   __ | $$$$$$$$
+|  \__| $$ _| $$_ | $$__/  \| $$  | $$
+ \$$    $$|   $$ \ \$$    $$| $$  | $$
+  \$$$$$$  \$$$$$$  \$$$$$$  \$$   \$$
+
+
+This is the source code of SICA, a tool for feedback-based load testing. It was
+developed as a Fachstudie at the University of Stuttgart.
+
+For the list of authors, see the AUTHORS file.
+For license information, see COPYING.
+
+
+BUILDING
+
+To build SICA, run
+$ cd sica
+sica$ mvn install
+sica$ cd ../sica-remote-monitor
+sica-remote-monitor$ mvn package

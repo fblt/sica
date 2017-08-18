@@ -1,0 +1,14 @@
+execution:
+- executor: [executor]
+  concurrency: $num_req
+  ramp-up: 1m
+  scenario: example
+
+scenarios:
+  example:
+    default-address: [SUT]
+    script: [script]
+
+reporting:
+- module: final-stats
+- module: console

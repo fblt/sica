@@ -1,0 +1,42 @@
+{
+  "placeholders": [
+    {
+      "id": "$num_req",
+      "type": "integer",
+      "range": [1,100]
+    },
+    {
+      "id": "$min_wait",
+      "type": "double",
+      "range": [1,100]
+    },
+    {
+      "id": "$max_wait",
+      "type": "double",
+      "range": [1,100]
+    },
+    {
+      "id": "$request_path",
+      "type": "enum",
+      "range": [
+        "/",
+        "/index",
+        "/request"
+      ]
+    }
+  ],
+  "constraints": [
+    {
+      "value1": "$min_wait",
+      "value2": "$max_wait",
+      "type": "lessThan"
+    }
+  ],
+  "goalFunction": "Monitor.CPU+Monitor.RAM",
+  "executor": "locust",
+  "sutAddress": "192.0.2.5",
+  "originalTestFile": "LocustSample.py",
+  "counter": 16,
+  "steadyStateTime": 5,
+  "monitorAddress": "http://localhost:4567"
+}

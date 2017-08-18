@@ -1,0 +1,82 @@
+{
+  "placeholders": [
+    {
+      "id": "$num_req",
+      "type": "integer",
+      "range": [
+        1,
+        100
+      ]
+    },
+    {
+      "id": "$min_wait",
+      "type": "double",
+      "range": [
+        1,
+        100
+      ]
+    },
+    {
+      "id": "$avg_wait",
+      "type": "double",
+      "range": [
+        1,
+        100
+      ]
+    },
+    {
+      "id": "$max_wait",
+      "type": "double",
+      "range": [
+        1,
+        100
+      ]
+    },
+    {
+      "id": "$request_path1",
+      "type": "enum",
+      "range": [
+        "/",
+        "/index",
+        "/request"
+      ]
+    },
+    {
+      "id": "$request_path2",
+      "type": "enum",
+      "range": [
+        "/",
+        "/index",
+        "/request"
+      ]
+    }
+  ],
+  "constraints": [
+    {
+      "value1": "$min_wait",
+      "value2": "$avg_wait",
+      "type": "lessThanOrEqual"
+    },
+    {
+      "value1": "$avg_wait",
+      "value2": "$max_wait",
+      "type": "lessThanOrEqual"
+    },
+    {
+      "value1": "$min_wait",
+      "value2": "$max_wait",
+      "type": "lessThan"
+    },
+    {
+      "value1": "$request_path1",
+      "value2": "$request_path2",
+      "type": "!="
+    }
+  ],
+  "goalFunction": "",
+  "executor": "",
+  "sutAddress": "",
+  "originalTestFile": "",
+  "steadyStateTime": 7,
+  "monitorAddress": "http://localhost:4567"
+}

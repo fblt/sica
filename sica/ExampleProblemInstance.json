@@ -1,0 +1,53 @@
+{
+  "executor": "locust",
+  "sutAddress": "http://10.35.32.99:7090",
+  "originalTestFile": "LocustSample.py",
+  "counter": 15,
+  "goalFunction": "Monitor.cpuUsed",
+  "steadyStateTime": 900000,
+  "monitorAddress": "http://10.35.32.99:8080",
+  "monitorSamples": 600,
+  "monitorInterval": 500,
+  "placeholders": [
+    {
+      "id": "$num_req",
+      "type": "integer",
+      "range": [
+        1,
+        100
+      ]
+    },
+    {
+      "id": "$min_wait",
+      "type": "integer",
+      "range": [
+        1,
+        1500
+      ]
+    },
+    {
+      "id": "$max_wait",
+      "type": "integer",
+      "range": [
+        1,
+        1500
+      ]
+    },
+    {
+      "id": "$request_path",
+      "type": "enum",
+      "range": [
+        "/slow",
+        "/fast",
+        "/index"
+      ]
+    }
+  ],
+  "constraints": [
+    {
+      "value1": "$min_wait",
+      "value2": "$max_wait",
+      "type": "lessThan"
+    }
+  ]
+}
